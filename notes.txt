@@ -1,0 +1,32 @@
+reset offset :
+docker exec -it broker kafka-consumer-groups --bootstrap-server broker:29092 --group my-consumer-group --reset-offsets --to-earliest --execute --topic voters_topic
+
+====================================================
+view offset of a group 
+docker exec -it broker kafka-consumer-groups --bootstrap-server broker:29092 --describe --group my-consumer-group
+
+====================================================
+getting the data of topic adding a member to a group 
+docker exec -it broker kafka-console-consumer --topic voters_topic --bootstrap-server broker:29092 --from-beginning --group my-consumer-group
+
+
+
+=============================================
+get all the values of topic 
+docker exec -it broker kafka-console-consumer --bootstrap-server broker:29092 --topic aggregated_votes_per_candidate --from-beginning --max-messages 1000
+
+
+Python 3.12.3
+
+
+open the sql terminal 
+docker exec -it postgres  psql -U postgres -d voting
+
+
+get the name of the topics 
+docker exec -it broker kafka-topics --bootstrap-server broker:29092 --list
+
+
+delte topic 
+docker exec -it broker kafka-topics --bootstrap-server broker:29092 --delete --topic aggregated_votes_per_candidate
+
