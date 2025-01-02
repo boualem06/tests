@@ -30,8 +30,61 @@ This repository contains the code for a realtime election voting system. The sys
 - Docker Compose installed on your machine.
 - Docker installed on your machine.
 
+---
+
 ### Steps to Run
 1. Clone this repository:
    ```bash
    git clone <repository-url>
-   cd <repository-folder>
+   cd <repository-folder>```
+
+2. Start the services using the following command:
+   ```bash
+   docker compose up -d
+```
+3. Install the required Python packages using the following command:
+```bash
+  pip install -r requirements.txt
+```
+
+4.Creating the required tables on Postgres and generating voter information on Kafka topic:
+```bash
+  python main.py
+```
+
+5. Consuming the voter information from Kafka topic, generating voting data and producing data to Kafka topic:
+```bash
+  python voting.py
+```
+
+6.Consuming the voting data from Kafka topic, enriching the data from Postgres and producing data to specific topics on Kafka:
+```bash
+  python spark-streaming.py
+```
+
+7. Running the Streamlit app:
+   ```bash
+  streamlit run streamlit-app.py
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
