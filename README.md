@@ -62,8 +62,9 @@ This repository contains the code for a realtime election voting system. The sys
 ```
 
 7. Running the Streamlit app:
-   ```bash streamlit run streamlit-app.py
-```
+   ```bash streamlit run streamlit-app.py ```
+
+---
 
 
 
