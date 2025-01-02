@@ -43,8 +43,7 @@ This repository contains the code for a realtime election voting system. The sys
    docker compose up -d
 ```
 3. Install the required Python packages using the following command:
-```bash
-  pip install -r requirements.txt
+```bash pip install -r requirements.txt
 ```
 
 4.Creating the required tables on Postgres and generating voter information on Kafka topic:
@@ -63,8 +62,7 @@ This repository contains the code for a realtime election voting system. The sys
 ```
 
 7. Running the Streamlit app:
-   ```bash
-  streamlit run streamlit-app.py
+   ```bash streamlit run streamlit-app.py
 ```
 
 
